@@ -1,19 +1,20 @@
 package me.nithanim.mensaapi;
 
 import java.util.List;
+import java.util.Map;
 
 public class MensaApiResult {
     private boolean success;
     private String cause;
-    private List<Menu> menus;
+    private Map<Type, List<Menu>> result;
 
     public MensaApiResult() {
     }
 
-    public MensaApiResult(boolean success, String cause, List<Menu> menus) {
+    public MensaApiResult(boolean success, String cause, Map<Type, List<Menu>> result) {
         this.success = success;
         this.cause = cause;
-        this.menus = menus;
+        this.result = result;
     }
 
     
@@ -32,7 +33,7 @@ public class MensaApiResult {
         return cause;
     }
 
-    public List<Menu> getMenus() {
-        return menus;
+    public Map<Type, List<Menu>> getResult() {
+        return result;
     }
 }
