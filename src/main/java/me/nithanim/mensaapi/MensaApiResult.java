@@ -17,8 +17,6 @@ public class MensaApiResult {
         this.cause = cause;
         this.result = result;
     }
-
-    
     
     public boolean isSuccessful() {
         return success;

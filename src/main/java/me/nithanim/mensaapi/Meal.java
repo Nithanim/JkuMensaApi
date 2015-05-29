@@ -11,6 +11,21 @@ public class Meal {
         this.price = price;
     }
 
+    /**
+     * Gson and any other deserialization libraries may
+     * use or need it to create a object.
+     */
+    private Meal() {
+        this.desc = null;
+        this.price = 0;
+    }
+    
+    
+    /**
+     * Returns the text that describes the meal.
+     * 
+     * @return The text describing the meal
+     */
     public String getDesc() {
         return desc;
     }

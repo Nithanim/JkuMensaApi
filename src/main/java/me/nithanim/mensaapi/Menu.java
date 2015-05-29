@@ -22,19 +22,29 @@ public class Menu {
         this.isVegetarian = isVegetarian;
     }
 
-    
-    /*
-     * Classic/Choice
+    /**
+     * Gson and any other deserialization libraries may
+     * use or need it to create a object.
      */
+    private Menu() {
+        this.type = null;
+        this.subtype = null;
+        this.meals = null;
+        this.price = 0;
+        this.oehBonus = 0;
+        this.date = null;
+        this.isVegetarian = false;
+    }
+    
     public Type getType() {
         return type;
     }
 
     /**
-     * The subtype applies for Choice only and can conatin:
+     * The subtype applies for Choice only for now and can conatin:
      * Grill/Snack/...
      * 
-     * @return 
+     * @return The subtype of the menu
      */
     public String getSubtype() {
         return subtype;
@@ -58,7 +68,7 @@ public class Menu {
      * 
      * @return Price of the meal,
      * -1 if it has none on purpose or
-     * -2 if not found
+     * -2 if not found or unable to parse
      * @see Meal
      */
     public int getPrice() {
