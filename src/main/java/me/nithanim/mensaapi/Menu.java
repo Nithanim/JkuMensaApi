@@ -1,6 +1,7 @@
 package me.nithanim.mensaapi;
 
 import java.util.List;
+import me.nithanim.mensaapi.util.Objects;
 
 public class Menu {
     private final Type type;
@@ -64,6 +65,10 @@ public class Menu {
         return price;
     }
 
+    public int getOehBonus() {
+        return oehBonus;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -81,5 +86,33 @@ public class Menu {
         sb.append(isVegetarian);
         sb.append('>');
         return sb.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + (this.type != null ? this.type.hashCode() : 0);
+        hash = 97 * hash + (this.subtype != null ? this.subtype.hashCode() : 0);
+        hash = 97 * hash + (this.meals != null ? this.meals.hashCode() : 0);
+        hash = 97 * hash + this.price;
+        hash = 97 * hash + this.oehBonus;
+        hash = 97 * hash + (this.date != null ? this.date.hashCode() : 0);
+        hash = 97 * hash + (this.isVegetarian ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || Meal.class != obj.getClass()) {
+            return false;
+        }
+        Menu other = (Menu) obj;
+        return this.type == other.type
+                && Objects.equals(this.subtype, other.subtype)
+                && Objects.equals(this.meals, other.meals)
+                && this.price == other.price
+                && this.oehBonus == other.oehBonus
+                && Objects.equals(this.date, other.date)
+                && this.isVegetarian == other.isVegetarian;
     }
 }

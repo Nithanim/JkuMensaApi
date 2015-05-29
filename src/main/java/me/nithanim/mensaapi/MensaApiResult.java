@@ -2,6 +2,7 @@ package me.nithanim.mensaapi;
 
 import java.util.List;
 import java.util.Map;
+import me.nithanim.mensaapi.util.Objects;
 
 public class MensaApiResult {
     private boolean success;
@@ -35,5 +36,25 @@ public class MensaApiResult {
 
     public Map<Type, List<Menu>> getResult() {
         return result;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 41 * hash + (this.success ? 1 : 0);
+        hash = 41 * hash + (this.cause != null ? this.cause.hashCode() : 0);
+        hash = 41 * hash + (this.result != null ? this.result.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || Meal.class != obj.getClass()) {
+            return false;
+        }
+        MensaApiResult other = (MensaApiResult) obj;
+        return this.success == other.success
+                && Objects.equals(this.cause, other.cause)
+                && Objects.equals(this.result, other.result);
     }
 }
