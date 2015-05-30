@@ -113,7 +113,7 @@ public class Menu {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || Meal.class != obj.getClass()) {
+        if (obj == null || Menu.class != obj.getClass()) {
             return false;
         }
         Menu other = (Menu) obj;
