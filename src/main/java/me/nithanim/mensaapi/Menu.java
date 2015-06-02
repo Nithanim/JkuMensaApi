@@ -79,6 +79,10 @@ public class Menu {
         return oehBonus;
     }
 
+    public String getDate() {
+        return date;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
