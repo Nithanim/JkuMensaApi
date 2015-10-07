@@ -96,6 +96,7 @@ public class Menu {
         sb.deleteCharAt(sb.length()-1);
         sb.append('>').append('|');
         sb.append(price).append('|');
+        sb.append(oehBonus).append('|');
         sb.append(date).append('|');
         sb.append(isVegetarian);
         sb.append('>');
