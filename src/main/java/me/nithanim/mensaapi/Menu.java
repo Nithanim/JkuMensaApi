@@ -2,6 +2,7 @@ package me.nithanim.mensaapi;
 
 import java.util.List;
 import me.nithanim.mensaapi.util.Objects;
+import org.joda.time.LocalDate;
 
 public class Menu {
     private final Type type;
@@ -9,10 +10,10 @@ public class Menu {
     private final List<Meal> meals;
     private final int price;
     private final int oehBonus;
-    private final String date;
+    private final LocalDate date;
     private final boolean isVegetarian;
     
-    public Menu(Type type, String subtype, List<Meal> meals, int price, int oehBonus, String date, boolean isVegetarian) {
+    public Menu(Type type, String subtype, List<Meal> meals, int price, int oehBonus, LocalDate date, boolean isVegetarian) {
         this.type = type;
         this.subtype = subtype;
         this.meals = meals;
@@ -79,7 +80,7 @@ public class Menu {
         return oehBonus;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
